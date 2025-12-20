@@ -1,0 +1,201 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Google Fonts for Modern Gradient Elegance Design */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Modern Gradient Elegance Design Theme */
+  --primary: #14b8a6; /* Teal accent */
+  --primary-foreground: #f8f9fa;
+  --sidebar-primary: #14b8a6;
+  --sidebar-primary-foreground: #f8f9fa;
+  --chart-1: #14b8a6;
+  --chart-2: #6366f1;
+  --chart-3: #0d1b2a;
+  --chart-4: #1e293b;
+  --chart-5: #0f172a;
+  --radius: 0.75rem;
+  --background: #0d1b2a; /* Deep navy */
+  --foreground: #f8f9fa; /* Off-white */
+  --card: #1e293b; /* Slightly lighter navy */
+  --card-foreground: #f8f9fa;
+  --popover: #1e293b;
+  --popover-foreground: #f8f9fa;
+  --secondary: #6366f1; /* Indigo */
+  --secondary-foreground: #f8f9fa;
+  --muted: #475569; /* Muted gray */
+  --muted-foreground: #cbd5e1;
+  --accent: #14b8a6; /* Teal */
+  --accent-foreground: #0d1b2a;
+  --destructive: #ef4444;
+  --destructive-foreground: #f8f9fa;
+  --border: #334155; /* Slate border */
+  --input: #1e293b;
+  --ring: #14b8a6;
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f8f9fa;
+  --sidebar-accent: #14b8a6;
+  --sidebar-accent-foreground: #0d1b2a;
+  --sidebar-border: #334155;
+  --sidebar-ring: #14b8a6;
+}
+
+.dark {
+  /* Dark theme uses same values as light in this design */
+  --primary: #14b8a6;
+  --primary-foreground: #f8f9fa;
+  --sidebar-primary: #14b8a6;
+  --sidebar-primary-foreground: #f8f9fa;
+  --background: #0d1b2a;
+  --foreground: #f8f9fa;
+  --card: #1e293b;
+  --card-foreground: #f8f9fa;
+  --popover: #1e293b;
+  --popover-foreground: #f8f9fa;
+  --secondary: #6366f1;
+  --secondary-foreground: #f8f9fa;
+  --muted: #475569;
+  --muted-foreground: #cbd5e1;
+  --accent: #14b8a6;
+  --accent-foreground: #0d1b2a;
+  --destructive: #ef4444;
+  --destructive-foreground: #f8f9fa;
+  --border: #334155;
+  --input: #1e293b;
+  --ring: #14b8a6;
+  --chart-1: #14b8a6;
+  --chart-2: #6366f1;
+  --chart-3: #0d1b2a;
+  --chart-4: #1e293b;
+  --chart-5: #0f172a;
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f8f9fa;
+  --sidebar-accent: #14b8a6;
+  --sidebar-accent-foreground: #0d1b2a;
+  --sidebar-border: #334155;
+  --sidebar-ring: #14b8a6;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+  
+  .font-lobster {
+    font-family: 'Lobster', cursive;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   * Modern Gradient Elegance Design Theme
+   */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  /* Gradient accent utility for cards and sections */
+  .gradient-accent {
+    background: linear-gradient(135deg, #14b8a6 0%, #6366f1 100%);
+  }
+
+  /* Soft shadow utility for depth */
+  .shadow-soft {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .shadow-soft-lg {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+}

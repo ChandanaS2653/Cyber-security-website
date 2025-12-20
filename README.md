@@ -31,8 +31,8 @@ A modern, responsive web application designed to bridge the gap between cybersec
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/ChandanaS2653/Cyber-secuirty-website.git
-   cd Cyber-secuirty-website
+   git clone https://github.com/ChandanaS2653/Cyber-security-website.git
+   cd Cyber-security-website
    ```
 
 2. **Install dependencies**

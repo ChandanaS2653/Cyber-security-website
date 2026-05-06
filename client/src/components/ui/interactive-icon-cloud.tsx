@@ -1,4 +1,4 @@
-http://test-bucket1-cs.s3-website-us-west-2.amazonaws.com"use client"
+"use client"
 
 import { useEffect, useMemo, useState } from "react"
 import { useTheme } from "@/contexts/ThemeContext"

@@ -21,6 +21,7 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("mission");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Smooth scroll to section
   const scrollToSection = (sectionId: string) => {
@@ -60,6 +61,7 @@ export default function Home() {
             CyberPath
           </h1>
 
+          {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-4 md:gap-8">
             <Link href="/">
               <Button
@@ -90,16 +92,51 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <Link href="/core-values" className="md:hidden">
-            <Button
-              variant="default"
-              size="sm"
-              className="bg-gradient-to-r from-primary to-secondary px-4 py-2"
+          {/* Mobile Nav: Hamburger */}
+          <div className="md:hidden flex items-center">
+            <button
+              aria-label="Open menu"
+              className="p-2 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              onClick={() => setMobileMenuOpen((v) => !v)}
             >
-              Values
-            </Button>
-          </Link>
+              {/* Hamburger icon */}
+              <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            {/* Mobile dropdown menu */}
+            {mobileMenuOpen && (
+              <div className="absolute top-full right-2 mt-2 w-44 rounded-lg shadow-lg bg-background border border-border z-50 flex flex-col animate-fade-in">
+                <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full justify-start border-primary text-primary hover:bg-primary/10 rounded-t-lg"
+                  >
+                    Home
+                  </Button>
+                </Link>
+                <Link href="/how-it-works" onClick={() => setMobileMenuOpen(false)}>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full justify-start border-primary text-primary hover:bg-primary/10"
+                  >
+                    How It Works
+                  </Button>
+                </Link>
+                <Link href="/core-values" onClick={() => setMobileMenuOpen(false)}>
+                  <Button
+                    variant="default"
+                    size="sm"
+                    className="w-full justify-start bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-smooth rounded-b-lg"
+                  >
+                    Core Values
+                  </Button>
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
       </nav>
 
